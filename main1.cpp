@@ -2,10 +2,12 @@
 using namespace std;
 
 
-double my_pow(double indicator, unsigned int degree)    
+double my_pow(double indicator, int degree)    
 {
 	double finalNumber = 1;
+	int primal_degree = degree;
 
+	degree = degree < 0 ? -degree : degree;
 	if (degree == 0)
 		return 1;
 
@@ -14,7 +16,7 @@ double my_pow(double indicator, unsigned int degree)
 		finalNumber *= indicator;
 	}
 
-	return finalNumber;
+	return primal_degree < 0 ? 1 / finalNumber : finalNumber;
 }
 
 int main()
